@@ -12,3 +12,12 @@ Project can be downloaded, forked and/or cloned the from the starter repository 
 - Python 2: python -m SimpleHTTPServer 8000
 - Python 3: python3 -m http.server 8000
 - Visit the site in your browser at http://localhost:8000
+
+### RESOURCES
+Udacity FEND Page [https://sites.google.com/udacity.com/gwgdevscholarship/fend](GWG FEND Page)
+Matthew Cranford
+[https://matthewcrandford.com]
+MDN
+[developer.mozilla.org](MDN Web Docs)
+W3Schools
+[w3shools.com](W3Schools)
