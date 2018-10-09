@@ -7,12 +7,6 @@ Given a static web app, the developer must implement and/or apply the following:
 
 ## Instructions
 
-### Users
-
-Users can view the project at
-
-### Developers
-
 Project can be downloaded, forked and/or cloned the from the starter repository [https://github.com/udacity/mws-restaurant-stage-1](Starter Repository). The code in this repository will serve as your baseline to begin development.
 - From inside the new directory, launch a local client server using Python from your terminal:
 - Python 2: python -m SimpleHTTPServer 8000
