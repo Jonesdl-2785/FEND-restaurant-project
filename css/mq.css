@@ -1,1 +1,18 @@
 /* ====================== Media Queries ====================== */
+@media only screen and (min-width: 1024px) {
+    #restaurants-list li {
+        max-width: 308px;
+  }
+}
+
+@media only screen and (min-width: 670px) {
+    #restaurants-list li {
+        max-width: 50%;
+  }
+}
+
+@media only screen and (min-width: 0px) {
+    #restaurants-list li {
+        max-width: 100%;
+  }
+}
