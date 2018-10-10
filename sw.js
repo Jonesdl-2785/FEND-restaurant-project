@@ -2,7 +2,7 @@
 let staticCacheName = 'v2';
 self.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open('v2').then(function(cache) {
+    caches.open('v1').then(function(cache) {
       return cache.addAll([
         '/',
         '/restaurant.html',
@@ -21,18 +21,18 @@ self.addEventListener('install', function(event) {
         '/img/8.jpg',
         '/img/9.jpg',
         '/img/10.jpg'
-        ])
-      })
-    )
-  })
+      ])
+    })
+  )
+})
 
-  self.addEventListener('activate', function(event) {
+self.addEventListener('activate', function(event) {
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
       return Promise.all(
         cacheNames.filter(function(cacheName) {
           return cacheName.startsWith('v2') &&
-                 cacheName != staticCacheName;
+            cacheName != staticCacheName;
         }).map(function(cacheName) {
           return caches.delete(cacheName);
         })
@@ -40,11 +40,11 @@ self.addEventListener('install', function(event) {
     })
   );
 });
- // Fetch event: to prevent default fetch event & provide a promise
-  self.addEventListener('fetch', function(event) {
-    event.respondWith(
-      caches.match(event.request).then(function(response) {
-        return response || fetch(event.request);
-      })
-    );
-  });
+// Fetch event: to prevent default fetch event & provide a promise
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.match(event.request).then(function(response) {
+      return response || fetch(event.request);
+    })
+  );
+});
