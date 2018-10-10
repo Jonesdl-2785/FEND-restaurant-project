@@ -1,4 +1,5 @@
 // SW Register - Cached files
+let staticCacheName = 'v2';
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('v2').then(function(cache) {
@@ -30,7 +31,7 @@ self.addEventListener('install', function(event) {
     caches.keys().then(function(cacheNames) {
       return Promise.all(
         cacheNames.filter(function(cacheName) {
-          return cacheName.startsWith('wittr-') &&
+          return cacheName.startsWith('v2') &&
                  cacheName != staticCacheName;
         }).map(function(cacheName) {
           return caches.delete(cacheName);
