@@ -7,12 +7,12 @@
 
 @media only screen and (min-width: 670px) {
     #restaurants-list li {
-        max-width: 50%;
+        max-width: 26%;
   }
 }
 
-@media only screen and (min-width: 0px) {
+/* @media only screen and (min-width: 0px) {
     #restaurants-list li {
         max-width: 100%;
   }
-}
+} */
