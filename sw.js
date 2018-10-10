@@ -1,7 +1,7 @@
 // SW Register - Cached files
 self.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open('v1').then(function(cache) {
+    caches.open('v2').then(function(cache) {
       return cache.addAll([
         '/',
         '/restaurant.html',
@@ -24,6 +24,21 @@ self.addEventListener('install', function(event) {
       })
     )
   })
+
+  self.addEventListener('activate', function(event) {
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.filter(function(cacheName) {
+          return cacheName.startsWith('wittr-') &&
+                 cacheName != staticCacheName;
+        }).map(function(cacheName) {
+          return caches.delete(cacheName);
+        })
+      );
+    })
+  );
+});
  // Fetch event: to prevent default fetch event & provide a promise
   self.addEventListener('fetch', function(event) {
     event.respondWith(
@@ -32,4 +47,3 @@ self.addEventListener('install', function(event) {
       })
     );
   });
-  
